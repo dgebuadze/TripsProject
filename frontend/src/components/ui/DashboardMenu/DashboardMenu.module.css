@@ -1,0 +1,17 @@
+.logoutButton{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.logoutButton button{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: inherit;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.logoutButton button:hover, .logoutButton button:active, .logoutButton button:focus{
+    background: inherit;
+}
