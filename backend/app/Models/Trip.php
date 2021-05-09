@@ -21,7 +21,7 @@ class Trip extends Model
 
     /**
      *
-     * Relationship with user: timezone belongs to user
+     * Relationship with user: trip belongs to user
      *
      * @return BelongsTo
      */
