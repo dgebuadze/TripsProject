@@ -54,7 +54,7 @@ class TripRepository implements TripRepositoryInterface
                     $query->where("start_at",'>=',$value);
                     break;
                 case "date_to":
-                    $query->where("start_at",'<=',$value);
+                    $query->where("end_at",'<=',$value);
                     break;
             }
         }
