@@ -22,7 +22,7 @@ class PermissionsSeeder extends Seeder
             'delete_trips_own',
             'view_profile',
             'edit_profile',
-            'view_timezone_full'
+            'view_trip_full'
         ];
 
         $managerPermissions = array_merge($userPermissions, [
