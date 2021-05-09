@@ -8,7 +8,7 @@ const Logo = ({ width, align }) => {
       className={`${styles.container} margin-align-${align}`}
       style={{ width: `${width}px` }}
     >
-      <h2 style={{color:"#fff",fontSize:"38px",textAlign:"center"}}>TRIPS</h2>
+      <h2 style={{color:"#37e137",fontSize:"26px",marginTop:"10px",textAlign:"center"}}>TRIPS</h2>
     </div>
   );
 };
