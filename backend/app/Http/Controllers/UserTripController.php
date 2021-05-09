@@ -15,7 +15,7 @@ use Illuminate\Http\Response;
 class UserTripController extends Controller
 {
 
-    private $tripRepository;
+    private TripRepositoryInterface $tripRepository;
 
     /**
      * UserTripController constructor.
@@ -29,6 +29,7 @@ class UserTripController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @param User $user
      * @return JsonResponse
      * @throws AuthorizationException
@@ -48,32 +49,5 @@ class UserTripController extends Controller
         }
 
         return response()->json(['success' => 1, 'data' => $tripsCollection], 200);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param User $user
-     * @param Timezone $timezone
-     * @return JsonResponse
-     */
-    public function update(User $user, Timezone $timezone)
-    {
-        $timezone->user_id = $user->id;
-        $timezones = $user->timezones;
-        return 1;
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param User $user
-     * @param Timezone $timezone
-     * @return Response
-     */
-    public function destroy(User $user, Timezone $timezone)
-    {
-        $this->timezoneRepository->destroy($timezone);
-        return $this->emptyResponse();
     }
 }
