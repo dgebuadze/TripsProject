@@ -19,8 +19,7 @@ import { LOGIN_PAGE_URI } from '../../common/pages';
 import {
   ENDPOINT_AUTH_TOKEN,
   ENDPOINT_GET_USER_INFO,
-  ENDPOINT_REGISTER,
-  ENDPOINT_REQUEST_RESET_PASSWORD
+  ENDPOINT_REGISTER
 } from '../../common/endpoints';
 
 export const loginUser = (userData) => (dispatch) => {
@@ -67,23 +66,6 @@ export const registerUser = (userData, history) => (dispatch) => {
     .catch(() => {
       dispatch({ type: STOP_LOADING_UI });
       return unexpectedErrorHandler();
-    });
-};
-
-export const resetPassword = (data) => (dispatch) => {
-  dispatch({ type: LOADING_UI });
-  POST(ENDPOINT_REQUEST_RESET_PASSWORD, data)
-    .then((res) => {
-      if (res && res.status === 200) {
-        dispatch({ type: STOP_LOADING_UI });
-        showSuccess(
-          messages.t('forgotpassword.reset_success'),
-          messages.t('forgotpassword.reset_success_description')
-        );
-      }
-    })
-    .catch(() => {
-      dispatch({ type: STOP_LOADING_UI });
     });
 };
 

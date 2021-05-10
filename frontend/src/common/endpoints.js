@@ -1,7 +1,6 @@
 export const ENDPOINT_AUTH_TOKEN = 'token';
 export const ENDPOINT_GET_USER_INFO = 'auth/me';
 export const ENDPOINT_REGISTER = 'auth/register';
-export const ENDPOINT_REQUEST_RESET_PASSWORD = 'users/reset_request';
 
 export const ENDPOINT_GET_TRIPS = 'trips/all';
 export const ENDPOINT_SAVE_TRIP = 'trips';
