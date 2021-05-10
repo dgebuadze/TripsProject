@@ -21,8 +21,8 @@ class Trip extends JsonResource
      */
     public function toArray($request)
     {
-
-        $earlier = new DateTime(date('Y-m-d'));
+        $time = time();
+        $earlier = new DateTime(date('Y-m-d',$time));
         $later = new DateTime($this->start_at);
 
         $diff = $later->diff($earlier)->format("%a");
@@ -35,7 +35,7 @@ class Trip extends JsonResource
                 $this->start_at,
                 $this->end_at
             ],
-            'start_day' => $diff,
+            'start_day' => strtotime($this->start_at) > $time ? $diff: 0,
             'start_at' => $this->start_at,
             'end_at' => $this->end_at,
             'user' => new UserResource($this->user),

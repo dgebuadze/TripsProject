@@ -21,6 +21,7 @@ class Trip extends Model
 
     /**
      *
+     *
      * Relationship with user: trip belongs to user
      *
      * @return BelongsTo
